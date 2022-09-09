@@ -1,0 +1,28 @@
+.foods-container{
+    width: 300px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 2px orange;
+    margin-right: 40px;
+    margin-bottom: 35px;
+    padding-top: 15px;
+    margin-top: 25px;
+    padding-bottom: 15px;
+
+}
+.foods-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.image{
+    width: 175px;
+    height: 175px;
+    border: 1px solid black;
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+.list{
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+}

@@ -1,0 +1,16 @@
+.foot{
+    background-color: black;
+}
+.foot-wrap{
+    display: flex;
+    justify-content: space-around;
+}
+
+h4{
+    color: gray;
+}
+.spon{
+    display: block;
+    padding: 5px;
+    color: white;
+}
