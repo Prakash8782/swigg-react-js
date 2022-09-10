@@ -17,12 +17,20 @@ function App() {
 
   return (
     <div className="App">
+      <header className='App-header'>
+        {isLoggedin &&
+         <nav>
+          <Link to="/"></Link>
+          <Link to="header/body"></Link>
+          {/* <link to></link> */}
+         </nav>
+        } 
+      </header>
       <Routes>
-       <Route index element={<Login isLoggedin={loginhandler}></Login>} />
-        <Route path="/header" element={<Header/>}> 
-        <Route path="body" element={<Body/>}/>
+        <Route path="/header" element={<Header/>}>
+        <Route path="body" index element={ isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>}/>
         </Route>
-        <Route path="/footer" element={<Footer/>} />
+        <Route path="footer" element={<Footer/>} />
       </Routes>
       
       {/* { isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>} */}

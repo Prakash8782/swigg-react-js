@@ -5,7 +5,9 @@
 
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: lightgreen;
+    border: 2px solid black;
 }
 
 a {
@@ -18,7 +20,7 @@ a:hover {
 
 .logo {
     font-size: 30px;
-    color: rgb(253, 202, 106);
+    color: black;
 }
 
 .nav-bar {

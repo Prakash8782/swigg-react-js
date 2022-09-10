@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import {useNavigate } from "react-router-dom";
 import './form.css';
 
 function Form(props) {
 
+    const navigate =useNavigate();
     const [form, setForm] = useState({
         id:'',
         restaurant: '',
@@ -41,17 +43,25 @@ function Form(props) {
     const subjectHandler = (a) => {
         a.preventDefault();
         const addedform = { ...form, id: Math.random().toString() }
-        props.onFormAdded(addedform);
-        setForm({
-            id:'',
-            restaurant: '',
-            variety: '',
-            offer: '',
-            price: '',
-            ratings: '',
-        })
-    }
-
+         
+        fetch('https://6313a3dcfc9dc45cb4e43afd.mockapi.io/hotels',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json,text/plain,*/*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(addedform)
+        }).then(res => res.jon())
+            .then(res => navigate('/header/body'));
+            setForm({
+                id:'',
+                restaurant: '',
+                variety: '',
+                offer: '',
+                price: '',
+                ratings: '',
+            })
+        }
     return (
         <div className="form">
             <h3>Orders</h3>

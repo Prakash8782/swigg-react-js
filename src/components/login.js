@@ -1,7 +1,9 @@
 import './login.css';
 import { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 
 function Login(props){
+    let navigateto=useNavigate();
     const[email,setEmail]=useState("");
     const[password,setPassword]=useState("");
     const[username,setUsername]=useState("");
@@ -11,6 +13,7 @@ function Login(props){
         a.preventDefault();
         localStorage.setItem("login",true);
         props.isLoggedin(true);
+        navigateto('/header/body');
     }
 
     useEffect(() => {
@@ -22,9 +25,10 @@ function Login(props){
         }).then((response)=>{
             if(response){
                 props.isLoggedin(false);
+                navigateto('/header/body');
             }
         })
-    },[props]);
+    },[props,navigateto]);
 
     useEffect(()=>{
         if((email.includes('@') && password.length > 5)){
