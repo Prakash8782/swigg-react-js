@@ -52,7 +52,7 @@ function Form(props) {
             },
             body: JSON.stringify(addedform)
         }).then(res => res.jon())
-            .then(res => navigate('/header/body'));
+            .then(res => navigate('/body'));
             setForm({
                 id:'',
                 restaurant: '',

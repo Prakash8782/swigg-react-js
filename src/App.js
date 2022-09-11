@@ -11,8 +11,7 @@ function App() {
   const [isLoggedin,setLoggedIn]=useState(false);
 
   const loginhandler=(islogin)=>{
-    localStorage.setItem('login', islogin)
-    setLoggedIn(islogin);
+        setLoggedIn(islogin);
   }
 
   return (
@@ -21,14 +20,14 @@ function App() {
         {isLoggedin &&
          <nav>
           <Link to="/"></Link>
+          <Link to="header"></Link>
           <Link to="header/body"></Link>
-          {/* <link to></link> */}
          </nav>
         } 
       </header>
       <Routes>
         <Route path="/header" element={<Header/>}>
-        <Route path="body" index element={ isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>}/>
+        <Route  path="body" element={ isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>}/>
         </Route>
         <Route path="footer" element={<Footer/>} />
       </Routes>
