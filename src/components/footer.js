@@ -1,8 +1,17 @@
 import './footer.css';
-
+import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Footer(){
+    let navigatefo=useNavigate();
+
+    useEffect(()=>{
+        navigatefo('/header/body/header')
+    });
+    
     return(
+        
         <footer>
             <div className='foot'>
                 <div className='foot-wrap'>

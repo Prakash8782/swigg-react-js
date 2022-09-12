@@ -12,6 +12,7 @@ function Form(props) {
         offer: '',
         price: '',
         ratings: '',
+        image:'',
     });
 
     const resHandler = (event) => {
@@ -60,6 +61,7 @@ function Form(props) {
                 offer: '',
                 price: '',
                 ratings: '',
+                image: '',
             })
         }
     return (

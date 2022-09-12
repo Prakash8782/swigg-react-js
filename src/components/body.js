@@ -2,12 +2,7 @@ import './body.css';
 import { useEffect, useState } from 'react';
 import FoodList from './foodlist';
 import Form from './form';
-import img1 from './images/pizza.jpg';
-import img2 from './images/chicken65.jpg';
-import img3 from './images/burger.jpg';
-import img4 from './images/fishfry.jpg';
-import img5 from './images/parotta.jpg';
-import img6 from './images/noodles.jpg';
+import {Outlet} from 'react-router-dom'
 
 function Body(props){
     // const [foods,setfoods]=useState([...foodlist]);
@@ -82,7 +77,6 @@ function Body(props){
 
     const foodList=[];
     const[foods,setFoods]=useState(foodList);
-    const image=[img1,img2,img3,img4,img5,img6];
 
     const addBodyHandler=(foods)=>{
         fetch('https://6313a3dcfc9dc45cb4e43afd.mockapi.io/hotels',{
@@ -97,10 +91,6 @@ function Body(props){
         
         setFoods((prevfoods)=>{
             return[...[foods],...prevfoods]
-        }).then((data)=>{
-            data.forEach((dat,i) => {
-                dat.images=image[i%image.length]
-            });
         })
         }
 
@@ -134,6 +124,7 @@ function Body(props){
             <Form onFormAdded={addBodyHandler}></Form>
             <div className='wrap'>
             <FoodList foods={foods}></FoodList>
+            <Outlet></Outlet>
             </div>
         </body>
         

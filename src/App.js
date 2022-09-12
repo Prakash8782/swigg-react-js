@@ -22,14 +22,16 @@ function App() {
           <Link to="/"></Link>
           <Link to="header"></Link>
           <Link to="header/body"></Link>
-         </nav>
+          <Link to="header/body/footer"></Link>
+        </nav>
         } 
       </header>
       <Routes>
+        <Route index element={<Login isLoggedin={loginhandler}></Login>}></Route>
         <Route path="/header" element={<Header/>}>
-        <Route  path="body" element={ isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>}/>
+        <Route  path="body" element={ isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>}></Route>
+        <Route path="footer" element={<Footer/>}></Route>
         </Route>
-        <Route path="footer" element={<Footer/>} />
       </Routes>
       
       {/* { isLoggedin ?<Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>} */}

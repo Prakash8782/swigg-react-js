@@ -14,7 +14,8 @@ function FoodList(props){
             variety={foods.variety}
             offer={foods.offer}
             price={foods.price}
-            ratings={foods.ratings}>
+            ratings={foods.ratings}
+            image={foods.image}>
             </Foods>
         })):<div className='body-con'><p>No Foods Found</p></div>
     }
